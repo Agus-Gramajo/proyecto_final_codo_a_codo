@@ -1,6 +1,5 @@
 <?php
 require_once 'includes/header.php';
-
 ?>
 
   <!-- ======= Hero Section ======= -->
@@ -19,7 +18,7 @@ require_once 'includes/header.php';
       <!-- Slide 2 -->
       <div class="carousel-item">
         <div class="carousel-container">
-          <h2 class="animate__animated animate__fadeInDown">Busca fomentar el trabajo </br>hecho con todo el corazón.</h2>
+          <h2 class="animate__animated animate__fadeInDown">Buscamos fomentar el trabajo </br>hecho con todo el corazón.</h2>
           <p class="animate__animated animate__fadeInUp"></p>
           <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Saber más</a>
         </div>
@@ -28,7 +27,7 @@ require_once 'includes/header.php';
       <!-- Slide 3 -->
       <div class="carousel-item">
         <div class="carousel-container">
-          <h2 class="animate__animated animate__fadeInDown">Su lema:</h2>
+          <h2 class="animate__animated animate__fadeInDown">Nuestro lema:</h2>
           <p class="animate__animated animate__fadeInUp">#CompraleAUnEmprendedor</p>
           <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Saber más</a>
         </div>
@@ -421,7 +420,7 @@ require_once 'includes/header.php';
     </section><!-- End Portfolio Section -->
 
     <!-- ======= Testimonials Section ======= -->
-    <section id="testimonials" class="testimonials">
+    <!-- <section id="testimonials" class="testimonials">
       <div class="container">
 
         <div class="section-title" data-aos="zoom-out">
@@ -443,8 +442,9 @@ require_once 'includes/header.php';
                 <h3>Saul Goodman</h3>
                 <h4>Ceo &amp; Founder</h4>
               </div>
-            </div><!-- End testimonial item -->
-
+            </div> -->
+            <!-- End testimonial item -->
+<!-- 
             <div class="swiper-slide">
               <div class="testimonial-item">
                 <p>
@@ -456,8 +456,9 @@ require_once 'includes/header.php';
                 <h3>Sara Wilsson</h3>
                 <h4>Designer</h4>
               </div>
-            </div><!-- End testimonial item -->
-
+            </div> -->
+            <!-- End testimonial item -->
+<!-- 
             <div class="swiper-slide">
               <div class="testimonial-item">
                 <p>
@@ -469,8 +470,9 @@ require_once 'includes/header.php';
                 <h3>Jena Karlis</h3>
                 <h4>Store Owner</h4>
               </div>
-            </div><!-- End testimonial item -->
-
+            </div> -->
+            <!-- End testimonial item -->
+<!-- 
             <div class="swiper-slide">
               <div class="testimonial-item">
                 <p>
@@ -482,8 +484,9 @@ require_once 'includes/header.php';
                 <h3>Matt Brandon</h3>
                 <h4>Freelancer</h4>
               </div>
-            </div><!-- End testimonial item -->
-
+            </div> -->
+            <!-- End testimonial item -->
+<!-- 
             <div class="swiper-slide">
               <div class="testimonial-item">
                 <p>
@@ -495,7 +498,8 @@ require_once 'includes/header.php';
                 <h3>John Larson</h3>
                 <h4>Entrepreneur</h4>
               </div>
-            </div><!-- End testimonial item -->
+            </div> -->
+            <!-- End testimonial item -->
 
           </div>
           <div class="swiper-pagination"></div>
@@ -592,7 +596,7 @@ require_once 'includes/header.php';
 
     
     <!-- ======= Team Section ======= -->
-    <section id="team" class="team">
+    <!-- <section id="team" class="team">
       <div class="container">
         
         <div class="section-title" data-aos="zoom-out">
@@ -678,10 +682,11 @@ require_once 'includes/header.php';
         </div>
 
       </div>
-    </section><!-- End Team Section -->
+    </section> -->
+    <!-- End Team Section -->
 
                    <!-- ======= F.A.Q Section ======= -->
-                   <section id="faq" class="faq">
+                   <!-- <section id="faq" class="faq">
                     <div class="container">
               
                       <div class="section-title" data-aos="zoom-out">
@@ -748,7 +753,8 @@ require_once 'includes/header.php';
                       </ul>
               
                     </div>
-                  </section><!-- End F.A.Q Section -->
+                  </section> -->
+                  <!-- End F.A.Q Section -->
 
     <!-- ======= Contact Section ======= -->
     <section id="contact" class="contact">
@@ -765,8 +771,8 @@ require_once 'includes/header.php';
             <div class="info">
               <div class="address">
                 <i class="bi bi-geo-alt"></i>
-                <h4>Location:</h4>
-                <p>A108 Adam Street, New York, NY 535022</p>
+                <h4>Dirección:</h4>
+                <p>Buenos Aires, Argentina</p>
               </div>
 
               <div class="email">
@@ -777,7 +783,7 @@ require_once 'includes/header.php';
 
               <div class="phone">
                 <i class="bi bi-phone"></i>
-                <h4>Call:</h4>
+                <h4>Tel:</h4>
                 <p>+1 5589 55488 55s</p>
               </div>
 

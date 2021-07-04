@@ -75,9 +75,9 @@
             </ul>
           </li>
           <!-- <li><a class="nav-link scrollto" href="#pricing">Precios</a></li> -->
-          <li><a class="nav-link scrollto" href="#team">Equipo</a></li>
+          <!-- <li><a class="nav-link scrollto" href="#team">Equipo</a></li> -->
           <li><a class="nav-link scrollto" href="#contact">Contacto</a></li>
-          <li><a class="nav-link scrollto" href="./admin/admin.php" target="_blank">Login</a></li>
+          <li><a class="nav-link scrollto" href="./admin/login.php" target="_blank">Login</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
