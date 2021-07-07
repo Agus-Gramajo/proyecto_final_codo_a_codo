@@ -15,7 +15,7 @@
 
   <!-- Google Fonts -->
   
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300;1,400;1,500&family=Quicksand:wght@300;400;500&display=swap" rel="stylesheet">
 
@@ -44,7 +44,7 @@
 
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top d-flex align-items-center  header-transparent ">
-    <div class="container d-flex align-items-center justify-content-between">
+    <div class="container d-flex align-items-center justify-content-center flex-column my-3">
 
       <div class="logo">
         <h1><a href="index.html"><img src="./assets/img/Logo Pickings Original.PNG" alt=""></a></h1>
@@ -52,26 +52,52 @@
         <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
       </div>
 
-      <nav id="navbar" class="navbar">
+      <nav id="navbar" class="navbar mt-3">
         <ul>
           <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
           <li><a class="nav-link scrollto" href="#about">Sobre nosotros</a></li>
           <li><a class="nav-link scrollto" href="#services">Servicios</a></li>
           <li class="dropdown"><a href="#portfolio"><span>Emprendedores</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-              <li><a href="#">Drop Down 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
+              <li class="dropdown"><a href="#"><span>Moda</span> <i class="bi bi-chevron-right"></i></a>
                 <ul>
-                  <li><a href="#">Deep Drop Down 1</a></li>
-                  <li><a href="#">Deep Drop Down 2</a></li>
-                  <li><a href="#">Deep Drop Down 3</a></li>
-                  <li><a href="#">Deep Drop Down 4</a></li>
-                  <li><a href="#">Deep Drop Down 5</a></li>
+                  <li><a href="#">Ropa</a></li>
+                  <li><a href="#">Zapatos</a></li>
+                  <li><a href="#">Carteras</a></li>
+                  <li><a href="#">Joyeria</a></li>
+                  <li><a href="#">Accesorios</a></li>
+                  <li><a href="#">Lingerie</a></li>
+                  <li><a href="#">Ropa de hombre</a></li>
                 </ul>
               </li>
-              <li><a href="#">Drop Down 2</a></li>
-              <li><a href="#">Drop Down 3</a></li>
-              <li><a href="#">Drop Down 4</a></li>
+              <li class="dropdown"><a href="#"><span>Casa</span> <i class="bi bi-chevron-right"></i></a>
+                <ul>
+                  <li><a href="#">Muebles</a></li>
+                  <li><a href="#">Deco Tela</a></li>
+                  <li><a href="#">Iluminación</a></li>
+                  <li><a href="#">Objetos</a></li>
+                  <li><a href="#">Velas</a></li>
+                  <li><a href="#">Wall</a></li>
+                  <li><a href="#">Pisos</a></li>
+                  <li><a href="#">Pottery</a></li>
+                  <li><a href="#">Cocina</a></li>
+                  <li><a href="#">Pets</a></li>
+                </ul>
+              </li>
+              <li class="dropdown"><a href="#"><span>Kids</span> <i class="bi bi-chevron-right"></i></a>
+                <ul>
+                  <li><a href="#">Ropa</a></li>
+                  <li><a href="#">Muebles</a></li>
+                  <li><a href="#">Iluminación</a></li>
+                  <li><a href="#">Accesorios</a></li>
+                  <li><a href="#">Juguetes</a></li>
+                  <li><a href="#">Deco</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Beauty</a></li>
+              <li><a href="#">Papeleria</a></li>
+              <li><a href="#">Sustentables</a></li>
+              <li><a href="#">Party</a></li>
             </ul>
           </li>
           <!-- <li><a class="nav-link scrollto" href="#pricing">Precios</a></li> -->

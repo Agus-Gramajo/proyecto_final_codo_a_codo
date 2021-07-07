@@ -20,6 +20,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300;1,400;1,500&family=Quicksand:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="/your-path-to-fontawesome/css/fontawesome.css" rel="stylesheet">
     
 
     <!-- Custom styles for this template-->
@@ -48,7 +49,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="admin.php">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Panel Administrador</span></a>
             </li>
@@ -110,7 +111,7 @@
 
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="ver_emprendedores">
+                <a class="nav-link" href="ver_emprendedores.php">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Ver todos</span></a>
             </li>

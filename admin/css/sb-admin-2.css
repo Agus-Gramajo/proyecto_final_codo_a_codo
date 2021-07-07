@@ -9816,6 +9816,9 @@ a:focus {
   padding-right: 1.5rem;
 }
 
+.container-fluid#add_user_container {
+  height: 82vh;
+}
 .scroll-to-top {
   position: fixed;
   right: 1rem;
