@@ -1,7 +1,29 @@
 <?php
-$user_name = $_POST['user_name'];
-$user_email = $_POST['user_email'];
-$pass = $_POST['password'];
+$user_name = trim($_POST['user_name']) ;
+$user_email = trim($_POST['user_email']) ;
+$pass = trim($_POST['password']) ;
 
-var_dump($name);
+include("connect_db.php");
+
+if(mysqli_query($conexion, "INSERT INTO `usuarios` (
+    `user_id`, 
+    `user_name`, 
+    `mail`, 
+    `password`
+    )
+VALUES (
+    NULL,
+    '$user_name',
+    '$user_email',
+    '$pass',
+     )")){
+  
+  echo "<script>alert('Los datos se ingresaron correctamente')</script>";
+}
+
+else{
+  echo "Hubo un error";
+}
+
+include("desconnect_db.php");
 ?>

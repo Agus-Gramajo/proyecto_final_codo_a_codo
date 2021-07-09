@@ -20,6 +20,6 @@
 	    echo "No es posible la conexion con la Base de Datos....";
 	    exit();
 	}else{
-        echo "La conexion se establecio existosamente";
+        
     }
 ?>
