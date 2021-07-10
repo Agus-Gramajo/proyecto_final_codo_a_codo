@@ -1,6 +1,7 @@
 <?php
 require_once 'includes/sidebar.php';
 require_once 'includes/navbar.php';
+include("connect_db.php");
 ?>
 
 <!-- Begin Page Content -->
@@ -10,13 +11,24 @@ require_once 'includes/navbar.php';
     <h1 class="h3 mb-2 text-gray-800">Agregar emprendedor</h1>
     
     <!-- Content Row -->
+    <div>
+        <?php
+        if(isset($_SESSION['message'])) {
+        ?>
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            <?= $_SESSION['message'] ?>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        <?php }?>
+
+    </div>
         <form action="actions/add_empr.php" method="POST"  class="d-flex flex-column col-10">
     <div class="d-flex flex-row">
         <div class="col-5">
             <input type="text" name="name" id="name" placeholder="Nombre..." class="form-control my-2">
-            <select name="categoria" id="categoria" class="form-control mb-2" aria-label="Default select example">
+            <select name="categoria" id="categoria" class="form-control mb-2" aria-label="Default select example" >
             <option value="#">Seleccionar categoria...</option>
-            <option value=17>Moda</option>
+            <option value=17 onclick="getOption()">Moda</option>
             <option value=18>Casa</option>
             <option value=19>Kids</option>
             <option value=20>Beauty</option>
@@ -59,13 +71,13 @@ require_once 'includes/navbar.php';
         <input type="url" name="fb" id="fb" placeholder="Facebook link..." class="form-control my-2">
         <input type="url" name="ig" id="ig" placeholder="Instagram link..." class="form-control my-2">
         <label for="img" class="mt-4">Seleccionar imagen</label>
-        <input type="file" name="img" id="img" class="form-control-file mb-1">
+        <input type="file" name="img" id="img" class="form-control-file mb-1" accept="image/*">
         <label for="publicar" class="my-4">Publicar</label>
         <input type="checkbox" id="publicar" value=1 name="publicar">
     </div>
     </div>
         <div>
-            <input type="submit" value="Aceptar" class="btn btn-outline-success my-2 mr-2" >
+            <input type="submit" value="Aceptar" class="btn btn-outline-success my-2 mr-2" name="guardar_emp">
             <input type="reset" value="Borrar" class="btn btn-outline-danger my-2">
         </div>
     </form>

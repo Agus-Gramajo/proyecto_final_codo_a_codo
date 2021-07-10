@@ -54,3 +54,19 @@
   });
 
 })(jQuery); // End of use strict
+
+
+//Form agregar emprendedor
+
+//Variables categoria
+
+
+function getOption() {
+  selectElement = document.querySelector('#categoria');
+            
+  output = 
+    selectElement.options[selectElement.selectedIndex].value;
+
+  document.querySelector('.output').textContent = output;
+}
+

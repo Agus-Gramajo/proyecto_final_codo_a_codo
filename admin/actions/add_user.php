@@ -15,15 +15,19 @@ VALUES (
     NULL,
     '$user_name',
     '$user_email',
-    '$pass',
+    '$pass'
      )")){
   
   echo "<script>alert('Los datos se ingresaron correctamente')</script>";
+  header('Location: ../agregar_usuario.php');
+  
 }
 
 else{
   echo "Hubo un error";
 }
 
+
 include("desconnect_db.php");
+
 ?>
