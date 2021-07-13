@@ -1,22 +1,22 @@
 <?php
 
-    include("connect_db.php");
-
- $emp_name = trim($_POST['name']);
- $emp_cat = intval($_POST['categoria']) ;
- $emp_subcat = intval($_POST['subcategoria']) ;
- $emp_desc =  $_POST['descripcion'];
- $emp_email = trim($_POST['email']);
- $emp_web =  trim($_POST['website']);
- $emp_fb =  trim($_POST['fb']);
- $emp_ig =  trim($_POST['ig']);
- $emp_img =  $_POST['img'];
- $emp_publicar = intval($_POST['publicar']) ;
+include("connect_db.php");
 
     
     
-    // if (isset($_POST['guardar_emp'])) {
-        if (mysqli_query($conexion, "INSERT INTO `emprendedores` (
+    if (isset($_POST['guardar_emp'])) {
+
+    $emp_name = trim($_POST['name']);
+    $emp_cat = intval($_POST['categoria']) ;
+    $emp_subcat = intval($_POST['subcategoria']) ;
+    $emp_desc =  $_POST['descripcion'];
+    $emp_email = trim($_POST['email']);
+    $emp_web =  trim($_POST['website']);
+    $emp_fb =  trim($_POST['fb']);
+    $emp_ig =  trim($_POST['ig']);
+    $emp_img =  $_POST['img'];
+    $emp_publicar = intval($_POST['publicar']) ;
+    $query = "INSERT INTO `emprendedores` (
         `emp_id`, 
         `emp_name`, 
         `categoria_id`, 
@@ -39,13 +39,25 @@
         '$emp_email',
         '$emp_img',
         '$emp_desc',
-        $emp_publicar)")) {
-            echo "<script>alert('Los datos se ingresaron correctamente')
-      window.location='../agregar_emprendedor.php';
-      </script>";
-        } else {
-            echo "Hubo un error";
+        $emp_publicar)";
+
+        $result = mysqli_query($conexion, $query);
+        if(!$result) {
+            die("Fallo la carga");
         }
+           
+            $_SESSION['message'] = "Datos guardados correctamente";
+            $_SESSION['message_type'] = "success";
+            header("Location: ../agregar_emprendedor.php");
+
+             // echo "<script>
+            
+            // alert('Los datos se ingresaron correctamente')
+            // window.location='../agregar_emprendedor.php';
+            // </script>";
+    
+        }
+
     // }
     include("desconnect_db.php");
     

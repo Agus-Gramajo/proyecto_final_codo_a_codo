@@ -1,4 +1,8 @@
-    <!-- Content Wrapper -->
+<?php
+include('../actions/connect_db.php');
+?>
+   
+   <!-- Content Wrapper -->
     <div id="content-wrapper" class="d-flex flex-column">
 
 <!-- Main Content -->
@@ -176,7 +180,7 @@
             <li class="nav-item dropdown no-arrow">
                 <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
+                    <span class="mr-2 d-none d-lg-inline text-gray-600 small">Nombre usuario</span>
                     <img class="img-profile rounded-circle"
                         src="img/undraw_profile.svg">
                 </a>

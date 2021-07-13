@@ -2,28 +2,26 @@
 
 	session_start();
 
-$conexion = mysqli_connect(
-	'localhost',
-	'root',
-	'',
-	'pickings',
-) or die(mysqli_errno($mysqli));
+	$conexion = mysqli_connect(
+		'localhost',
+		'root',
+		'',
+		'pickings',
+	);
 
-	// $host = "localhost";    
-	// $db = "pickings";    
-	// $usuariodb = "root";    
-	// $clavedb = "";   
+if(mysqli_connect_errno()){
 
+    echo 'No se pudo conectar a la db';
+    header("location:./admin.php");
+}else{
+    
+}
 
-	// $tabla_usuarios = "usuarios"; 	   
-	// $tabla_emprendedores = "emprendedores"; 	   
-	// $tabla_categoria = "categorias"; 	   
-	// $tabla_subcat = "subcategorias"; 	   
-	
+$query=mysqli_query($conexion, "SELECT * FROM emprendedores");
 
-	
-	
-	// $conexion = new mysqli($host,$usuariodb,$clavedb,$db);
+//var_dump($query);
+
+$listadoArrayAsociativo = mysqli_fetch_assoc($query);
 
 
 ?>

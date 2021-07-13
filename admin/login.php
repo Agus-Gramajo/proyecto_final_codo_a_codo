@@ -1,4 +1,7 @@
+<?php
 
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -50,12 +53,12 @@
                                 <form class="user" method="POST" action="./actions/user_login.php">
                                     <div class="form-group">
                                         <input type="email" class="form-control form-control-user"
-                                            id="user_email" aria-describedby="emailHelp"
+                                            id="user_email" name="user_email" aria-describedby="emailHelp"
                                             placeholder="Ingresa tu dirección de mail...">
                                     </div>
                                     <div class="form-group">
                                         <input type="password" class="form-control form-control-user"
-                                            id="password" placeholder="Password">
+                                            id="password" placeholder="Password" name="password">
                                     </div>
                                     <div class="form-group">
                                         <div class="custom-control custom-checkbox small">

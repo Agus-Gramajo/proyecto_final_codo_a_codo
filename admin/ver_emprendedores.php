@@ -14,10 +14,24 @@ $emprendedores = "SELECT * FROM emprendedores";
 <!-- Page Heading -->
 <h1 class="h3 mb-2 text-gray-800">Listado de emprendedores</h1>
 
+
+
 <!-- DataTales Example -->
 <div class="card shadow mb-4">
     <div class="card-header py-3">
         <h6 class="m-0 font-weight-bold text-primary">Emprendedores</h6>
+    </div>
+    <div class="row">
+    <div class="col-md-4">
+    <?php 
+        if(isset($_SESSION['message'])) { ?>
+        <div class="alert alert-<?= $_SESSION['message_type']?> alert-dismissible fade show" role="alert">
+        <?= $_SESSION['message']?>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+
+    <?php session_unset(); } ?>
+    </div>
     </div>
     <div class="card-body">
         <div class="table-responsive">
@@ -55,9 +69,9 @@ $emprendedores = "SELECT * FROM emprendedores";
             <td><?php echo $row['emp_ig']; ?></td>
             <td><?php echo $row['emp_img']; ?></td>
             
-            <td class="text-center align-middle"><a href="edit.php?id=<?php echo $row['id']?>"><i class="fas fa-edit btn-outline-success"></i></a></td>
-            <td class="text-center align-middle"><a href="delete_task.php?id=<?php echo $row['id']?>"><i class="fas fa-trash"></i></a></td>
-                        <td class="text-center align-middle"><input type="checkbox" id="publicar"></td>
+            <td class="text-center align-middle"><a href="./actions/edit_emp.php?emp_id=<?php echo $row['emp_id']?>"><i class="fas fa-edit btn-outline-success"></i></a></td>
+            <td class="text-center align-middle"><a href="./actions/delete_emp.php?emp_id=<?php echo $row['emp_id']?>"><i class="fas fa-trash"></i></a></td>
+            <td class="text-center align-middle"><input type="checkbox" id="publicar"></td>
    
           </tr>
           <?php } ?>

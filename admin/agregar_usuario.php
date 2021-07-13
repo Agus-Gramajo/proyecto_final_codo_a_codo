@@ -9,7 +9,7 @@ require_once 'includes/navbar.php';
 <h1 class="h3 mb-4 text-gray-800">Agregar Usuario</h1>
 
 <div>
-    <form action="actions/add_user.php" method="POST"  class="d-flex flex-column col-4">
+    <form action="actions/add_user.php" method="POST"  class="d-flex flex-column col-sm-12 col-md-6 col-lg-4">
         <input type="text" name="user_name" id="user_name" placeholder="Nombre..." class="form-control my-2">
         <input type="email" name="user_email" id="user_email" placeholder="Email..." class="form-control my-2">
         <input type="password" name="password" id="password" placeholder="Password..." class="form-control my-2">

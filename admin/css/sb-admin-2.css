@@ -1490,7 +1490,7 @@ pre code {
 
 .table th,
 .table td {
-  padding: 0.75rem;
+  padding: 0.5rem;
   vertical-align: top;
   border-top: 1px solid #e3e6f0;
 }
@@ -4525,7 +4525,10 @@ input[type="button"].btn-block {
 .card-body {
   flex: 1 1 auto;
   min-height: 1px;
-  padding: 1.25rem;
+  padding: 1.25rem;  
+}
+.card-body table {
+  font-size: 0.9rem !important;
 }
 
 .card-title {
@@ -10323,7 +10326,7 @@ a:focus {
 }
 
 .sidebar {
-  width: 6.5rem;
+  width: 7rem;
   min-height: 100vh;
 }
 
@@ -10464,7 +10467,14 @@ a:focus {
 }
 
 .sidebar-brand-icon img{
-  width: 150px !important;
+  width: 100px !important;
+}
+
+@media (max-width: 450px) {
+  .sidebar-brand-icon img {
+    width: 85px !important;
+  }
+  
 }
 
 .sidebar .sidebar-brand .sidebar-brand-text {

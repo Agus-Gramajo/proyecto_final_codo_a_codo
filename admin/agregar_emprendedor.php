@@ -11,17 +11,22 @@ include("connect_db.php");
     <h1 class="h3 mb-2 text-gray-800">Agregar emprendedor</h1>
     
     <!-- Content Row -->
-    <div>
-        <?php
-        if(isset($_SESSION['message'])) {
-        ?>
-            <div class="alert alert-warning alert-dismissible fade show" role="alert">
-            <?= $_SESSION['message'] ?>
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-        <?php }?>
+    <!-- <div id="okMessage"> -->
+    <div class="row">
+    <div class="col-md-4">
+    <?php 
+        if(isset($_SESSION['message'])) { ?>
+        <div class="alert alert-<?= $_SESSION['message_type']?> alert-dismissible fade show" role="alert">
+        <?= $_SESSION['message']?>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
 
+    <?php session_unset(); } ?>
     </div>
+    </div>
+  
+    <!-- </div> -->
+
         <form action="actions/add_empr.php" method="POST"  class="d-flex flex-column col-10">
     <div class="d-flex flex-row">
         <div class="col-5">
@@ -77,7 +82,7 @@ include("connect_db.php");
     </div>
     </div>
         <div>
-            <input type="submit" value="Aceptar" class="btn btn-outline-success my-2 mr-2" name="guardar_emp">
+            <input type="submit" value="Aceptar" class="btn btn-outline-success my-2 mr-2" name="guardar_emp" id="guardar_emp">
             <input type="reset" value="Borrar" class="btn btn-outline-danger my-2">
         </div>
     </form>
