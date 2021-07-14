@@ -69,7 +69,7 @@ $emprendedores = "SELECT * FROM emprendedores";
             <td><?php echo $row['emp_ig']; ?></td>
             <td><?php echo $row['emp_img']; ?></td>
             
-            <td class="text-center align-middle"><a href="./actions/edit_emp.php?emp_id=<?php echo $row['emp_id']?>"><i class="fas fa-edit btn-outline-success"></i></a></td>
+            <td class="text-center align-middle"><a href="./editar_emp.php?emp_id=<?php echo $row['emp_id']?>"><i class="fas fa-edit btn-outline-success"></i></a></td>
             <td class="text-center align-middle"><a href="./actions/delete_emp.php?emp_id=<?php echo $row['emp_id']?>"><i class="fas fa-trash"></i></a></td>
             <td class="text-center align-middle"><input type="checkbox" id="publicar"></td>
    
