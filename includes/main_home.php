@@ -306,7 +306,7 @@
     <!-- ======= Portfolio Section ======= -->
     <section id="portfolio" class="portfolio">
       <div class="container">
-
+        
         <div class="section-title" data-aos="zoom-out">
           <h2>Emprendedores</h2>
           <p>Conocelos</p>
@@ -320,8 +320,26 @@
         </ul>
 
         <div class="row portfolio-container" data-aos="fade-up">
+        <?php 
+        
+              include_once "../admin/actions/connect_db.php";
+              $query = "SELECT `emp_name`, `emp_desc`, `emp_img`, `emp_web` FROM emprendedores";
+              $result = mysqli_query($conexion, $query);
+              var_dump($conexion);
+              while($row = mysqli_fetch_row($result)) { ?>
+                <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                  <div class="portfolio-img"><img src="assets/img/portfolio/portfolio-1.jpg" class="img-fluid" alt=""></div>
+                    <div class="portfolio-info">
+                      <h4><?php echo $row[0];?></h4>
+                      <p><?php echo $row[1];?></p>
+                      <a href="assets/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="<?php echo $row[0];?>"><i class="bx bx-plus"></i></a>
+                      <a href="<?php echo $row[3];?>" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+                    </div>
+                </div>
+              <?php } ?>
+          
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+          <!-- <div class="col-lg-4 col-md-6 portfolio-item filter-app">
             <div class="portfolio-img"><img src="assets/img/portfolio/portfolio-1.jpg" class="img-fluid" alt=""></div>
             <div class="portfolio-info">
               <h4>App 1</h4>
@@ -408,7 +426,7 @@
               <p>Web</p>
               <a href="assets/img/portfolio/portfolio-9.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 3"><i class="bx bx-plus"></i></a>
               <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-            </div>
+            </div> -->
           </div>
 
         </div>
