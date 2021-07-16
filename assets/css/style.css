@@ -11,7 +11,7 @@
 
 body {
   font-family: 'Poppins', sans-serif;
-  color: #752578;
+  color: #6c757d;
 }
 
 a {
@@ -80,7 +80,7 @@ h1, h2, h3, h4, h5, h6 {
   transition: all 0.5s;
   background: linear-gradient(
     0deg
-    , #8922b3 0%, #33364a 100%);
+    , #fbedc7 0%, #ffffff 100%);
 }
 
 #header.header-transparent {
@@ -90,7 +90,7 @@ h1, h2, h3, h4, h5, h6 {
 #header.header-scrolled {
   background: linear-gradient(
     0deg
-    , #e3bbe98f 0%,  #cc90e4 100%);
+    , #f5f2ec 0%, #ffffff 100%);
 }
 
 #header .logo h1 {
@@ -103,7 +103,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #header .logo h1 a, #header .logo h1 a:hover {
-  color: #fff;
+  color: #6c757d;
   text-decoration: none;
 }
 
@@ -142,10 +142,13 @@ h1, h2, h3, h4, h5, h6 {
   padding: 5px 15px 7px 15px;
   margin-left: 5px;
   font-size: 14px;
-  color: #fff;
+  color: #6c757d;
   white-space: nowrap;
   transition: 0.3s;
   border-radius: 50px;
+}
+.navbar .active:focus, .navbar .active {
+  color: white !important;
 }
 
 .navbar a i, .navbar a:focus i {
@@ -180,7 +183,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .navbar .dropdown ul a {
   padding: 10px 20px;
-  color: #8922b3;
+  color: #4d8e80;
   margin: 0 5px;
   font-size: 14px;
 }
@@ -190,7 +193,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .navbar .dropdown ul a:hover, .navbar .dropdown ul .active:hover, .navbar .dropdown ul li:hover > a {
-  color: #fff;
+  color: #fff !important;
 }
 
 .navbar .dropdown:hover > ul {
@@ -281,7 +284,7 @@ h1, h2, h3, h4, h5, h6 {
   padding: 10px 20px;
   margin: 5px;
   font-size: 15px;
-  color: #8922b3;
+  color: #a9d5cc;
 }
 
 .navbar-mobile a:hover, .navbar-mobile .active, .navbar-mobile li:hover > a {
@@ -331,8 +334,11 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
   overflow: hidden;
   position: relative;
-  background: linear-gradient(0deg, #8922b3 0%, #33364a 100%);
+  background: linear-gradient(0deg, #fbedc7 0%, #ffffff 100%);
   padding: 0;
+  background-image: url('../img/back_acuarela.png');
+  background-size: cover;
+  background-position: center;
 }
 
 #hero .carousel-container {
@@ -347,7 +353,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #hero h2 {
-  color: #fff;
+  color: #6c757d;
   margin-bottom: 30px;
   font-size: 48px;
   font-weight: 700;
@@ -358,7 +364,7 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-animation-delay: 0.4s;
   animation-delay: 0.4s;
   margin: 0 auto 30px auto;
-  color: #fff;
+  color: #8d959c;
 }
 
 #hero .carousel-control-prev, #hero .carousel-control-next {
@@ -384,7 +390,7 @@ h1, h2, h3, h4, h5, h6 {
   transition: 0.5s;
   line-height: 1;
   margin: 10px;
-  color: #fff;
+  color: #fc3b6d;
   -webkit-animation-delay: 0.8s;
   animation-delay: 0.8s;
   border: 2px solid #fc3b6d;
@@ -536,7 +542,7 @@ section {
   font-weight: 700;
   text-transform: uppercase;
   font-family: "Poppins", sans-serif;
-  color: #8922b3;
+  color: #fc3b6d;
 }
 
 /*--------------------------------------------------------------
@@ -612,7 +618,7 @@ section {
   border: 1px solid #d4d6df;
   padding: 15px;
   transition: 0.3s;
-  color: #8922b3;
+  color: #00576a;
   border-radius: 0;
   display: flex;
   align-items: center;
@@ -689,7 +695,7 @@ section {
 # Cta
 --------------------------------------------------------------*/
 .cta {
-  background: #8922b3;
+  background: #a9d5cc;
   padding: 80px 0;
 }
 
@@ -777,7 +783,7 @@ section {
 }
 
 .services .title a {
-  color: #8922b3;
+  color: #a9d5cc;
   transition: ease-in-out 0.3s;
 }
 
@@ -808,7 +814,7 @@ section {
   font-weight: 500;
   line-height: 1;
   text-transform: uppercase;
-  color: #752578;
+  color: #00576a;
   transition: all 0.3s ease-in-out;
 }
 
@@ -1106,7 +1112,7 @@ section {
 .pricing ul {
   padding: 0;
   list-style: none;
-  color: #752578;
+  color: #00576a;
   text-align: center;
   line-height: 20px;
   font-size: 14px;
@@ -1201,7 +1207,7 @@ section {
   font-weight: 400;
   padding-left: 25px;
   cursor: pointer;
-  color: #752578;
+  color: #00576a;
   transition: 0.3s;
 }
 
@@ -1303,7 +1309,7 @@ section {
   font-weight: 700;
   margin-bottom: 5px;
   font-size: 18px;
-  color: #8922b3;
+  color: #00576a;
 }
 
 .team .member .member-info span {
@@ -1352,7 +1358,7 @@ section {
   font-size: 22px;
   font-weight: 600;
   margin-bottom: 5px;
-  color: #8922b3;
+  color: #00576a;
 }
 
 .contact .info p {
@@ -1525,7 +1531,7 @@ section {
 # Footer
 --------------------------------------------------------------*/
 #footer {
-  background: #a4aef7;
+  background: #00576a6e;
   color: #fff;
   font-size: 14px;
   text-align: center;

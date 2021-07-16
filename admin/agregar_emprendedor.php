@@ -2,6 +2,7 @@
 require_once 'includes/sidebar.php';
 require_once 'includes/navbar.php';
 include("connect_db.php");
+
 ?>
 
 <!-- Begin Page Content -->
@@ -76,6 +77,7 @@ include("connect_db.php");
         <input type="url" name="fb" id="fb" placeholder="Facebook link..." class="form-control my-2">
         <input type="url" name="ig" id="ig" placeholder="Instagram link..." class="form-control my-2">
         <label for="img" class="mt-4">Seleccionar imagen</label>
+        <input type="hidden" name="MAX_FILE_SIZE" value="200000" />
         <input type="file" name="img" id="img" class="form-control-file mb-1" accept="image/*">
         <label for="publicar" class="my-4">Publicar</label>
         <input type="checkbox" id="publicar" value=1 name="publicar">

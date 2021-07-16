@@ -314,28 +314,46 @@
 
         <ul id="portfolio-flters" class="d-flex justify-content-end" data-aos="fade-up">
           <li data-filter="*" class="filter-active">All</li>
-          <li data-filter=".filter-app">App</li>
-          <li data-filter=".filter-card">Card</li>
-          <li data-filter=".filter-web">Web</li>
+          <?php 
+        
+              include_once "admin/actions/connect_db.php";
+              
+
+              $query = "SELECT * FROM categorias";
+              $result = mysqli_query($conexion, $query);
+             
+
+              while($row = mysqli_fetch_array($result)) { ?>
+              <li data-filter=".filter-<?php echo $row['cat_name'];?>"><?php echo $row['cat_name'];?></li>
+              <?php } ?>
+          
+          <!-- <li data-filter=".filter-card">Card</li>
+          <li data-filter=".filter-web">Web</li> -->
         </ul>
 
         <div class="row portfolio-container" data-aos="fade-up">
         <?php 
         
-              include_once "../admin/actions/connect_db.php";
-              $query = "SELECT `emp_name`, `emp_desc`, `emp_img`, `emp_web` FROM emprendedores";
+              include_once "admin/actions/connect_db.php";
+              
+
+              $query = "SELECT * FROM emprendedores";
+              $query_cat = "SELECT * FROM categorias";
+              $result_cat = mysqli_query($conexion, $query_cat);
               $result = mysqli_query($conexion, $query);
-              var_dump($conexion);
-              while($row = mysqli_fetch_row($result)) { ?>
+             
+
+              while($row = mysqli_fetch_array($result)) { ?>
                 <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                  <div class="portfolio-img"><img src="assets/img/portfolio/portfolio-1.jpg" class="img-fluid" alt=""></div>
+                  <div class="portfolio-img"><img src="admin/actions/img_uploads/<?php echo $row['emp_img'];?>" class="img-fluid" alt=""></div>
                     <div class="portfolio-info">
-                      <h4><?php echo $row[0];?></h4>
-                      <p><?php echo $row[1];?></p>
-                      <a href="assets/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="<?php echo $row[0];?>"><i class="bx bx-plus"></i></a>
-                      <a href="<?php echo $row[3];?>" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+                      <h4><?php echo $row['emp_name'];?></h4>
+                      <p><?php echo $row['emp_desc'];?></p>
+                      <a href="/admin/actions/img_uploads/<?php echo $row['emp_img'];?>" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="<?php echo $row['emp_desc'];?>"><i class="bx bx-plus"></i></a>
+                      <a href="<?php echo $row['emp_web'];?>" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
                     </div>
                 </div>
+                
               <?php } ?>
           
 

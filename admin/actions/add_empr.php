@@ -14,7 +14,7 @@ include("connect_db.php");
     $emp_web =  trim($_POST['website']);
     $emp_fb =  trim($_POST['fb']);
     $emp_ig =  trim($_POST['ig']);
-    $emp_img =  $_POST['img'];
+    $emp_img =  $_FILES['img']['name'];
     $emp_publicar = intval($_POST['publicar']) ;
     $query = "INSERT INTO `emprendedores` (
         `emp_id`, 
@@ -41,13 +41,18 @@ include("connect_db.php");
         '$emp_desc',
         $emp_publicar)";
 
-        $result = mysqli_query($conexion, $query);
-        if(!$result) {
-            die("Fallo la carga");
-        }
+$directorio = 'img_uploads/';
+$directorio = $directorio.basename( $_FILES['img']['name']);
+move_uploaded_file($_FILES['img']['tmp_name'],$directorio); 
+
+                $result = mysqli_query($conexion, $query);
+                if(!$result) {
+                    die("Fallo la carga");
+                }
            
             $_SESSION['message'] = "Datos guardados correctamente";
             $_SESSION['message_type'] = "success";
+            
             header("Location: ../agregar_emprendedor.php");
 
              // echo "<script>
