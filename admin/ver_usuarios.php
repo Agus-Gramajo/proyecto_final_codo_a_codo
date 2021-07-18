@@ -16,38 +16,40 @@ $ver_usuarios = "SELECT * FROM usuarios";
 <div class="card shadow mb-4">
     <div class="card-header py-3">
         <h6 class="m-0 font-weight-bold text-primary">Usarios</h6>
+        <?php 
+        if(isset($_SESSION['message'])) { ?>
+        <div class="alert alert-<?= $_SESSION['message_type']?> alert-dismissible fade show" role="alert">
+        <?= $_SESSION['message']?>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+
+    <?php session_unset(); } ?>
     </div>
     <div class="card-body">
-        <div class="table-responsive">
-            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                <thead>
-                    <tr>
-                        <th>Nombre</th>
-                        <th>Mail</th>
-                        <th>Editar</th>
-                        <th>Eliminar</th>
-                    </tr>
-                </thead>
-                <tbody>
-                <?php
+        <div class="container col-lg-12 d-flex flex-wrap">
+
+        
+    <?php
           $query = "SELECT * FROM usuarios";
           $result_usuarios = mysqli_query($conexion, $query);    
 
           while($row = mysqli_fetch_assoc($result_usuarios)) { ?>
-          <tr>
-            <td><?php echo $row['user_name']; ?></td>
-            <td><?php echo $row['mail']; ?></td>
-          
-            <td class="text-center align-middle"><a href="edit.php?id=<?php echo $row['id']?>"><i class="fas fa-edit btn-outline-success"></i></a></td>
-            <td class="text-center align-middle"><a href="delete_task.php?id=<?php echo $row['id']?>"><i class="fas fa-trash"></i></a></td>   
-          </tr>
-          <?php } ?>
-                      
-                                       
-                    
-                </tbody>
-            </table>
-        </div>
+            <div class="col-md-3">
+    		    <div class="card profile-card-3">
+    		        <div class="background-block">
+    		            <img src="../assets/img/back_acuarela.png" alt="profile-sample1" class="background"/>
+    		        </div>
+    		        <div class="profile-thumb-block">
+    		            <img src="actions/img_uploads/<?php echo $row['user_img'] ?>"  alt="profile-image" class="profile"/>
+    		        </div>
+    		        <div class="card-content">
+                    <h2><?php echo $row['user_name']; ?></h3>
+                    <div class="icon-block"><a href="editar_usuario.php?user_id=<?php echo $row['user_id']?>"><i class="fas fa-edit btn-outline-success"></i></a><a href="actions/delete_user.php?user_id=<?php echo $row['user_id']?>"> <i class="fas fa-trash"></i></a></div>
+                    </div>
+                </div>
+    		</div>
+            <?php } ?>
+            </div>
     </div>
 </div>
 

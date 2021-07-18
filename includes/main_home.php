@@ -8,7 +8,7 @@
         <div class="carousel-container">
           <h2 class="animate__animated animate__fadeInDown">Sumate a <span>Pickings</span></h2>
           <p class="animate__animated fanimate__adeInUp">Pickings es el puente entre los mejores emprendedores del país y las personas que buscan comprar productos de forma consciente y apoyando la industria nacional.</p>
-          <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Saber más</a>
+          <a href="https://www.facebook.com/PickingsOnline/" target="_blank" class="btn-get-started animate__animated animate__fadeInUp scrollto">Saber más</a>
         </div>
       </div>
 
@@ -355,7 +355,7 @@
                 </div>
                 
               <?php } ?>
-          
+            
 
           <!-- <div class="col-lg-4 col-md-6 portfolio-item filter-app">
             <div class="portfolio-img"><img src="assets/img/portfolio/portfolio-1.jpg" class="img-fluid" alt=""></div>

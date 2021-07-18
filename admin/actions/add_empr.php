@@ -41,10 +41,11 @@ include("connect_db.php");
         '$emp_desc',
         $emp_publicar)";
 
-$directorio = 'img_uploads/';
-$directorio = $directorio.basename( $_FILES['img']['name']);
-move_uploaded_file($_FILES['img']['tmp_name'],$directorio); 
+        $directorio = 'img_uploads/';
+        $directorio = $directorio.basename( $_FILES['img']['name']);
+        move_uploaded_file($_FILES['img']['tmp_name'],$directorio); 
 
+        
                 $result = mysqli_query($conexion, $query);
                 if(!$result) {
                     die("Fallo la carga");
