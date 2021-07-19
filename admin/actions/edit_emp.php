@@ -16,14 +16,14 @@ if(isset($_GET['emp_id'])) {
         $emp_web = $row['emp_web'];
         $emp_fb = $row['emp_fb'];
         $emp_ig = $row['emp_ig'];
-        $emp_img = $row['emp_img'];
+        $emp_img =  $_FILES['img']['name'];
         $emp_publicar = $row['emp_publicar'];
     }
 }
 
 if(isset($_POST['actualizar_emp'])) {
-    $emp_id = $_GET['emp_id'];
-     $emp_name = $_POST['name'];
+        $emp_id = $_GET['emp_id'];
+        $emp_name = $_POST['name'];
         $emp_cat = $_POST['categoria'];
         $emp_subcat = $_POST['subcategoria'];
         $emp_desc = $_POST['descripcion'];
@@ -31,7 +31,7 @@ if(isset($_POST['actualizar_emp'])) {
         $emp_web = $_POST['website'];
         $emp_fb = $_POST['fb'];
         $emp_ig = $_POST['ig'];
-        $emp_img = $_POST['img'];
+        $emp_img =  $_FILES['img']['name'];
         $emp_publicar = $_POST['publicar'];
 
         $query = "UPDATE emprendedores SET emp_name = '$emp_name', 
@@ -45,6 +45,10 @@ if(isset($_POST['actualizar_emp'])) {
         emp_web = '$emp_web',
         emp_mail = '$emp_email'
         WHERE emp_id = $emp_id";
+
+        $directorio = 'img_uploads/';
+        $directorio = $directorio.basename( $_FILES['img']['name']);
+        move_uploaded_file($_FILES['img']['tmp_name'],$directorio); 
 
         mysqli_query($conexion, $query);
 
