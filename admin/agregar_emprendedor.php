@@ -33,40 +33,30 @@ include("connect_db.php");
         <div class="col-5">
             <input type="text" name="name" id="name" placeholder="Nombre..." class="form-control my-2">
             <select name="categoria" id="categoria" class="form-control mb-2" aria-label="Default select example" >
-            <option value="#">Seleccionar categoria...</option>
-            <option value=17 onclick="getOption()">Moda</option>
-            <option value=18>Casa</option>
-            <option value=19>Kids</option>
-            <option value=20>Beauty</option>
-            <option value=21>Papeleria</option>
-            <option value=22>Sustentables</option>
-            <option value=23>Party</option>
+                <option value="#">Selecciona una categoria...</option>
+                <?php
+                
+                $query = mysqli_query($conexion, "SELECT * FROM categorias");
+                ?>
+                <?php
+                    while($datos = mysqli_fetch_array($query))
+                {?>
+            <option value="<?php echo $datos['categoria_id']?>" class="text-capitalize"><?php echo $datos['cat_name']?></option>
+            <?php }?>
+            
         </select>
         <select name="subcategoria" id="subcategoria" class="form-control mb-2" aria-label="Default select example">
             <option value="#">Seleccionar subcategoria...</option>
-            <option value=17>Ropa</option>
-            <option value=18>Zapatos</option>
-            <option value=19>Carteras</option>
-            <option value=20>Joyeria</option>
-            <option value=21>Accesorios</option>
-            <option value=22>Lingerie</option>
-            <option value=23>Ropa de Hombre</option>
-            <option value=17>Muebles</option>
-            <option value=18>Deco tela</option>
-            <option value=19>Iluminacion</option>
-            <option value=20>Objetos</option>
-            <option value=21>Velas</option>
-            <option value=22>Wall</option>
-            <option value=23>Pisos</option>
-            <option value=21>Pottery</option>
-            <option value=22>Cocina</option>
-            <option value=23>Pets</option>
-            <option value=21>Plantas</option>
-            <option value=22>Ropa</option>
-            <option value=23>Muebles</option>
-            <option value=21>Accesorios</option>
-            <option value=22>Juguetes</option>
-            <option value=23>Deco Kids</option>
+            <?php
+                
+                $query = mysqli_query($conexion, "SELECT * FROM subcategorias");
+                ?>
+                <?php
+                    while($datos = mysqli_fetch_array($query))
+                {?>
+            <option value="<?php echo $datos['subcat_id']?>" class="text-capitalize"><?php echo $datos['subcat_name']?></option>
+            <?php }?>
+    
         </select>
         <textarea name="descripcion" id="descripcion" cols="30" rows="10" class="form-control" placeholder="Descripción..."></textarea>
         <input type="email" name="email" id="email" placeholder="Email..." class="form-control my-2">
