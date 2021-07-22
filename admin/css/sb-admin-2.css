@@ -1819,8 +1819,11 @@ pre code {
   width: 100%;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
+  
 }
-
+table {
+  table-layout: fixed;
+}
 .table-responsive > .table-bordered {
   border: 0;
 }

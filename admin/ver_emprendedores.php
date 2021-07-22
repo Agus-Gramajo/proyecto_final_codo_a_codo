@@ -35,43 +35,50 @@ $emprendedores = "SELECT * FROM emprendedores";
     </div>
     <div class="card-body">
         <div class="table-responsive">
-            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+            <table class="table table-bordered table-hover" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                     <tr>
-                        <th>Nombre</th>
-                        <th>Categoria</th>
-                        <th>Subcategoria</th>
-                        <th>Detalle</th>
-                        <th>Mail</th>
-                        <th>Web</th>
-                        <th>Facebook</th>
-                        <th>Instagram</th>
-                        <th>Link imagen</th>
-                        <th>Editar</th>
-                        <th>Eliminar</th>
-                        <th>Publicar</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Categoria</th>
+                        <th scope="col">Subcategoria</th>
+                        <th scope="col">Detalle</th>
+                        <th scope="col">Mail</th>
+                        <th scope="col">Web</th>
+                        <th scope="col">Facebook</th>
+                        <th scope="col">Instagram</th>
+                        <th scope="col">Link imagen</th>
+                        <th scope="col">Editar</th>
+                        <th scope="col">Eliminar</th>
+                        <th scope="col">Publicar</th>
                     </tr>
                 </thead>
                 <tbody>
                 <?php
-          $query = "SELECT * FROM emprendedores";
+          $query = "SELECT *, categorias.cat_name, subcategorias.subcat_name from categorias inner join emprendedores on emprendedores.categoria_id = categorias.categoria_id 
+          inner join subcategorias on emprendedores.subcat_id = subcategorias.subcat_id";
           $result_emprendedores = mysqli_query($conexion, $query);    
 
           while($row = mysqli_fetch_assoc($result_emprendedores)) { ?>
           <tr>
-            <td><?php echo $row['emp_name']; ?></td>
-            <td><?php echo $row['categoria_id']; ?></td>
-            <td><?php echo $row['subcat_id']; ?></td>
-            <td><?php echo $row['emp_desc']; ?></td>
-            <td><?php echo $row['emp_mail']; ?></td>
-            <td><?php echo $row['emp_web']; ?></td>
-            <td><?php echo $row['emp_fb']; ?></td>
-            <td><?php echo $row['emp_ig']; ?></td>
+            <td class="text-capitalize"><?php echo $row['emp_name']; ?></td>
+            <td class="text-capitalize"><?php echo $row['cat_name']; ?></td>
+            <td class="text-capitalize"><?php echo $row['subcat_name']; ?></td>
+            <td class="text-capitalize"><?php echo $row['emp_desc']; ?></td>
+            <td class="text-lowercase"><?php echo $row['emp_mail']; ?></td>
+            <td class="text-lowercase"><?php echo $row['emp_web']; ?></td>
+            <td class="text-lowercase"><?php echo $row['emp_fb']; ?></td>
+            <td class="text-lowercase"><?php echo $row['emp_ig']; ?></td>
             <td><?php echo $row['emp_img']; ?></td>
             
             <td class="text-center align-middle"><a href="./editar_emp.php?emp_id=<?php echo $row['emp_id']?>"><i class="fas fa-edit btn-outline-success"></i></a></td>
             <td class="text-center align-middle"><a href="./actions/delete_emp.php?emp_id=<?php echo $row['emp_id']?>"><i class="fas fa-trash"></i></a></td>
-            <td class="text-center align-middle"><input type="checkbox" id="publicar"></td>
+            <td class="text-center align-middle"><input type="checkbox" id="publicar" 
+            <?php if( $row['emp_publicar']==1) {?>
+            <?php echo "checked"?>
+            <?php }?>
+        
+
+            ></td>
    
           </tr>
           <?php } ?>

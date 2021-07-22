@@ -32,7 +32,7 @@ if(isset($_POST['actualizar_emp'])) {
         $emp_fb = $_POST['fb'];
         $emp_ig = $_POST['ig'];
         $emp_img =  $_FILES['img']['name'];
-        $emp_publicar = $_POST['publicar'];
+        $emp_publicar = intval($_POST['publicar']);
 
         $query = "UPDATE emprendedores SET emp_name = '$emp_name', 
         categoria_id = '$emp_cat', 
@@ -41,7 +41,7 @@ if(isset($_POST['actualizar_emp'])) {
         emp_fb = '$emp_fb',
         emp_ig = '$emp_ig', 
         emp_img = '$emp_img', 
-        emp_publicar = '$emp_publicar', 
+        emp_publicar = $emp_publicar, 
         emp_web = '$emp_web',
         emp_mail = '$emp_email'
         WHERE emp_id = $emp_id";

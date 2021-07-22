@@ -68,7 +68,10 @@ include("actions/edit_emp.php");
             <input type="file" name="img" id="img" class="form-control-file mb-1" accept="image/*">
             <img src="actions/img_uploads/<?php echo $row['emp_img'] ?>"  alt="profile-image" class="img-thumbnail"/></br>
             <label for="publicar" class="my-4">Publicar</label>
-            <input type="checkbox" id="publicar" value="<?php echo $emp_publicar; ?>"name="publicar">
+            <input type="checkbox"  value=1 id="publicar" name="publicar"
+            <?php if( $row['emp_publicar']==1) {?>
+            <?php echo "checked"?>
+            <?php }?>>
         </div>
     </div>
     <div>
