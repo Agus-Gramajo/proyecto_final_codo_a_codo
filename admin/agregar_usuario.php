@@ -1,7 +1,7 @@
 <?php
 require_once 'includes/sidebar.php';
 require_once 'includes/navbar.php';
-include("connect_db.php");
+include("./actions/connect_db.php");
 ?>
 <!-- Begin Page Content -->
 <div class="container-fluid" id="add_user_container">
@@ -21,6 +21,7 @@ include("connect_db.php");
             <input type="submit" value="Aceptar" class="btn btn-outline-success my-2 mr-2" id="agregar_usuario">
             <input type="reset" value="Borrar" class="btn btn-outline-danger my-2">
         </div>
+        <a href="ver_usuarios.php" class="btn btn-outline-warning " style="width: fit-content;">Ver todos</a>
     </form>
 
 </div>

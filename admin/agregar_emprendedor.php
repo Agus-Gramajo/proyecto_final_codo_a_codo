@@ -1,8 +1,8 @@
 <?php
 require_once 'includes/sidebar.php';
 require_once 'includes/navbar.php';
-include("connect_db.php");
-
+include("actions/connect_db.php");
+session_start();
 ?>
 
 <!-- Begin Page Content -->
@@ -31,7 +31,7 @@ include("connect_db.php");
         <form action="actions/add_empr.php" method="POST"  class="d-flex flex-column col-10" enctype="multipart/form-data">
     <div class="d-flex flex-row">
         <div class="col-5">
-            <input type="text" name="name" id="name" placeholder="Nombre..." class="form-control my-2">
+            <input type="text" name="name" id="name" placeholder="Nombre..." class="form-control my-2 text-capitalize">
             <select name="categoria" id="categoria" class="form-control mb-2" aria-label="Default select example" >
                 <option value="#">Selecciona una categoria...</option>
                 <?php
@@ -45,23 +45,26 @@ include("connect_db.php");
             <?php }?>
             
         </select>
-        <select name="subcategoria" id="subcategoria" class="form-control mb-2" aria-label="Default select example">
-            <option value="#">Seleccionar subcategoria...</option>
+        <select name="subcategoria" id="subcategoria" class="form-control mb-2 text-capitalize" aria-label="Default select example">
+            <option value="0">Seleccionar subcategoria...</option>
             <?php
-                
-                $query = mysqli_query($conexion, "SELECT * FROM subcategorias");
+                $categoria=$_POST['categoria'];
+               
+                $query = "SELECT * FROM categorias INNER JOIN subcategorias ON categorias.categoria_id = subcategorias.categoria_id WHERE categorias.categoria_id = $categoria";
+                $result = mysqli_query($conexion, $query);
                 ?>
                 <?php
-                    while($datos = mysqli_fetch_array($query))
+                    while($datos = mysqli_fetch_array($result))
+                    
                 {?>
-            <option value="<?php echo $datos['subcat_id']?>" class="text-capitalize"><?php echo $datos['subcat_name']?></option>
-            <?php }?>
-    
+            <option value="<?php echo $datos['subcategorias.subcat_id']?>" class="text-capitalize"><?php echo $datos['subcategorias.subcat_name']?></option>
+            <?php var_dump($datos['subcategorias.subcat_id']);}?>
+          
         </select>
         <textarea name="descripcion" id="descripcion" cols="30" rows="10" class="form-control" placeholder="Descripción..."></textarea>
         <input type="email" name="email" id="email" placeholder="Email..." class="form-control my-2">
         <input type="url" name="website" id="website" placeholder="Website..." class="form-control my-2">
-    
+   
     </div>
     <div class="col-5">
         <input type="url" name="fb" id="fb" placeholder="Facebook link..." class="form-control my-2">
@@ -77,6 +80,7 @@ include("connect_db.php");
             <input type="submit" value="Aceptar" class="btn btn-outline-success my-2 mr-2" name="guardar_emp" id="guardar_emp">
             <input type="reset" value="Borrar" class="btn btn-outline-danger my-2">
         </div>
+        <a href="ver_emprendedores.php" class="btn btn-outline-warning " style="width: fit-content;">Volver</a>
     </form>
       
   

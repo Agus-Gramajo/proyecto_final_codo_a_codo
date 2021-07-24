@@ -4,6 +4,15 @@ require_once 'includes/navbar.php';
 include("actions/connect_db.php");
 
 $emprendedores = "SELECT * FROM emprendedores";
+$buscar = $_POST['buscar'];
+$where = '';
+
+if (isset($_POST['generar_busqueda'])) {
+    $where = "WHERE emp_name LIKE '".$buscar."%'";
+}else{
+    $where = "";
+}
+;
 
 
 ?>
@@ -18,8 +27,9 @@ $emprendedores = "SELECT * FROM emprendedores";
 
 <!-- DataTales Example -->
 <div class="card shadow mb-4">
-    <div class="card-header py-3">
+    <div class="card-header py-3 d-inline-flex flex-row justify-content-between align-items-center">
         <h6 class="m-0 font-weight-bold text-primary">Emprendedores</h6>
+        <a href="agregar_emprendedor.php" class="btn btn-outline-info " style="width: fit-content;">Nuevo</a>
     </div>
     <div class="row">
     <div class="col-md-4">
@@ -55,9 +65,11 @@ $emprendedores = "SELECT * FROM emprendedores";
                 <tbody>
                 <?php
           $query = "SELECT *, categorias.cat_name, subcategorias.subcat_name from categorias inner join emprendedores on emprendedores.categoria_id = categorias.categoria_id 
-          inner join subcategorias on emprendedores.subcat_id = subcategorias.subcat_id";
+          inner join subcategorias on emprendedores.subcat_id = subcategorias.subcat_id $where";
           $result_emprendedores = mysqli_query($conexion, $query);    
-
+            if(mysqli_num_rows($result_emprendedores)==0) {
+                echo "<h2>No hay concidencias</h2>";
+            }
           while($row = mysqli_fetch_assoc($result_emprendedores)) { ?>
           <tr>
             <td class="text-capitalize"><?php echo $row['emp_name']; ?></td>

@@ -1,13 +1,13 @@
-	<?php
+<?php
 
-	session_start();
+session_start();
 
-	$conexion = mysqli_connect(
-		'localhost',
-		'root',
-		'',
-		'pickings',
-	);
+$conexion = mysqli_connect(
+	'localhost',
+	'root',
+	'',
+	'pickings',
+);
 
 if(mysqli_connect_errno()){
 

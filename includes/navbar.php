@@ -5,7 +5,7 @@
           <li><a class="nav-link scrollto" href="#services">Servicios</a></li>
           <li class="dropdown"><a href="#portfolio"><span>Emprendedores</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-              <li class="dropdown"><a href="#"><span>Moda</span> <i class="bi bi-chevron-right"></i></a>
+              <li class="dropdown"><a href="moda.php"><span>Moda</span> <i class="bi bi-chevron-right"></i></a>
                 <ul>
                   <li><a href="#">Ropa</a></li>
                   <li><a href="#">Zapatos</a></li>
@@ -16,7 +16,7 @@
                   <li><a href="#">Ropa de hombre</a></li>
                 </ul>
               </li>
-              <li class="dropdown"><a href="#"><span>Casa</span> <i class="bi bi-chevron-right"></i></a>
+              <li class="dropdown"><a href="casa.php"><span>Casa</span> <i class="bi bi-chevron-right"></i></a>
                 <ul>
                   <li><a href="#">Muebles</a></li>
                   <li><a href="#">Deco Tela</a></li>
@@ -30,7 +30,7 @@
                   <li><a href="#">Pets</a></li>
                 </ul>
               </li>
-              <li class="dropdown"><a href="#"><span>Kids</span> <i class="bi bi-chevron-right"></i></a>
+              <li class="dropdown"><a href="kids.php"><span>Kids</span> <i class="bi bi-chevron-right"></i></a>
                 <ul>
                   <li><a href="#">Ropa</a></li>
                   <li><a href="#">Muebles</a></li>
@@ -40,15 +40,15 @@
                   <li><a href="#">Deco</a></li>
                 </ul>
               </li>
-              <li><a href="#">Beauty</a></li>
-              <li><a href="#">Papeleria</a></li>
-              <li><a href="#">Sustentables</a></li>
-              <li><a href="#">Party</a></li>
+              <li><a href="beauty.php">Beauty</a></li>
+              <li><a href="papeleria.php">Papeleria</a></li>
+              <li><a href="sustentables.php">Sustentables</a></li>
+              <li><a href="party.php">Party</a></li>
             </ul>
           </li>
           <!-- <li><a class="nav-link scrollto" href="#pricing">Precios</a></li> -->
           <!-- <li><a class="nav-link scrollto" href="#team">Equipo</a></li> -->
-          <li><a class="nav-link scrollto" href="#contact">Contacto</a></li>
+          <li><a class="nav-link scrollto" href="index.php#contact">Contacto</a></li>
           <li><a class="nav-link scrollto" href="./admin/login.php" target="_blank">Login</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>

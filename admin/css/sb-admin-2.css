@@ -2366,14 +2366,14 @@ fieldset:disabled a.btn {
 
 .btn-primary:hover {
   color: #fff;
-  background-color: #8922b3;
-  border-color: #8922b3;
+  background-color: #00576a;
+  border-color: #00576a;
 }
 
 .btn-primary:focus, .btn-primary.focus {
   color: #fff;
-  background-color: #8922b3;
-  border-color: #8922b3;
+  background-color: #00576a;
+  border-color: #00576a;
   box-shadow: 0 0 0 0.2rem rgba(105, 136, 228, 0.5);
 }
 
@@ -10742,7 +10742,7 @@ a:focus {
 }
 
 .sidebar-dark #sidebarToggle:hover {
-  background-color: rgba(255, 255, 255, 0.25);
+  background-color: #00576a71;
 }
 
 .sidebar-dark.toggled #sidebarToggle::after {

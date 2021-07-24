@@ -14,16 +14,18 @@ $ver_usuarios = "SELECT * FROM usuarios";
 
 <!-- DataTales Example -->
 <div class="card shadow mb-4">
-    <div class="card-header py-3">
+    <div class="card-header py-3 d-inline-flex flex-row justify-content-between align-items-center">
         <h6 class="m-0 font-weight-bold text-primary">Usarios</h6>
+        <a href="agregar_usuario.php" class="btn btn-outline-info " style="width: fit-content;">Nuevo</a>
         <?php 
         if(isset($_SESSION['message'])) { ?>
         <div class="alert alert-<?= $_SESSION['message_type']?> alert-dismissible fade show" role="alert">
         <?= $_SESSION['message']?>
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-</div>
+        </div>
 
     <?php session_unset(); } ?>
+    
     </div>
     <div class="card-body">
         <div class="container col-lg-12 d-flex flex-wrap">

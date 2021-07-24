@@ -1,5 +1,7 @@
 <?php
 include("connect_db.php");
+session_start();
+
 if(isset($_GET['emp_id'])) {
     $emp_id = $_GET['emp_id'];
     $query = "SELECT * FROM emprendedores WHERE emp_id = $emp_id";

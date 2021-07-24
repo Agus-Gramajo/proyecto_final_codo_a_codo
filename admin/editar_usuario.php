@@ -27,6 +27,7 @@ include('actions/edit_user.php');
             <input type="submit" value="Aceptar" class="btn btn-outline-success my-2 mr-2" name="actualizar_usuario">
             <input type="reset" value="Borrar" class="btn btn-outline-danger my-2">
         </div>
+        <a href="ver_usuarios.php" class="btn btn-outline-warning " style="width: fit-content;">Volver</a>
     </form>
 
 </div>
