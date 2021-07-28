@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once 'includes/sidebar.php';
 require_once 'includes/navbar.php';
 include("./actions/connect_db.php");

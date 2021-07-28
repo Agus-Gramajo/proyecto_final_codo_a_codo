@@ -1,8 +1,14 @@
-            <!-- Footer -->
+<?php
+session_start();
+Include("actions/connect_db.php");
+$result_usuarios = mysqli_query($conexion, "SELECT * FROM usuarios");
+$array_usuarios = mysqli_fetch_array($result_usuarios);
+?>      
+           <!-- Footer -->
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Your Website 2021</span>
+                        <span>Pickings &copy; 2021</span>
                     </div>
                 </div>
             </footer>

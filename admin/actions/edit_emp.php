@@ -54,7 +54,7 @@ if(isset($_POST['actualizar_emp'])) {
 
         mysqli_query($conexion, $query);
 
-        $_SESSION['message'] = 'Datos actualizados correctamente';
+        $_SESSION['message'] = '<span>Datos actualizados correctamente</span>';
         $_SESSION['message_type'] = 'warning';
 
         header("Location: ../ver_emprendedores.php");

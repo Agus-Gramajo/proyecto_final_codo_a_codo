@@ -32,8 +32,8 @@ session_start();
     <div class="d-flex flex-row">
         <div class="col-5">
             <input type="text" name="name" id="name" placeholder="Nombre..." class="form-control my-2 text-capitalize">
-            <select name="categoria" id="categoria" class="form-control mb-2" aria-label="Default select example" >
-                <option value="#">Selecciona una categoria...</option>
+            <select name="categoria" id="categoria" class="form-control mb-2 text-capitalize" aria-label="Default select example" onchange="enviar_valores(this.value);">
+                <option value="#" class="text-capitalize">Selecciona una categoria...</option>
                 <?php
                 
                 $query = mysqli_query($conexion, "SELECT * FROM categorias");
@@ -41,16 +41,26 @@ session_start();
                 <?php
                     while($datos = mysqli_fetch_array($query))
                 {?>
-            <option value="<?php echo $datos['categoria_id']?>" class="text-capitalize"><?php echo $datos['cat_name']?></option>
+            <option value=<?php echo $datos['categoria_id']?> class="text-capitalize"><?php echo $datos['cat_name']?></option>
             <?php }?>
-            
+            <script>
+                function enviar_valores(){
+                var cat = document.getElementById('categoria').value;
+                console.log(cat);
+                }
+            </script>
+            <input type="hidden" value="selected_cat">
+            <?php 
+            $valor=$_GET['selected_cat'];
+            echo $valor;
+            ?>
         </select>
         <select name="subcategoria" id="subcategoria" class="form-control mb-2 text-capitalize" aria-label="Default select example">
             <option value="0">Seleccionar subcategoria...</option>
             <?php
-                $categoria=$_POST['categoria'];
+                $categoria=$_GET['categoria'];
                
-                $query = "SELECT * FROM categorias INNER JOIN subcategorias ON categorias.categoria_id = subcategorias.categoria_id WHERE categorias.categoria_id = $categoria";
+                $query = "SELECT * FROM categorias INNER JOIN subcategorias ON categorias.categoria_id = subcategorias.categoria_id WHERE categorias.categoria_id = $valor";
                 $result = mysqli_query($conexion, $query);
                 ?>
                 <?php

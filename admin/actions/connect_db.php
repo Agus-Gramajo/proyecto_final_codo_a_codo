@@ -9,19 +9,11 @@ $conexion = mysqli_connect(
 	'pickings',
 );
 
-if(mysqli_connect_errno()){
+if(mysqli_connect_errno($conexion)){
 
     echo 'No se pudo conectar a la db';
     header("location:./admin.php");
-}else{
-    
+
 }
-
-$query=mysqli_query($conexion, "SELECT * FROM emprendedores");
-
-//var_dump($query);
-
-$listadoArrayAsociativo = mysqli_fetch_assoc($query);
-
 
 ?>

@@ -1,4 +1,5 @@
 <?php 
+session_start();
 require_once './includes/sidebar.php';
 require_once 'includes/navbar.php';
 include("actions/connect_db.php");
@@ -22,7 +23,14 @@ if (isset($_POST['generar_busqueda'])) {
 
 <!-- Page Heading -->
 <h1 class="h3 mb-2 text-gray-800">Listado de emprendedores</h1>
+<?php 
+    if(isset($_SESSION['message'])) { ?>
+    <div class="alert alert-<?= $_SESSION['message_type']?> alert-dismissible fade show" role="alert">
+    <?= $_SESSION['message']?>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">&times;</span></button>
+    </div>
 
+<?php session_unset(); } ?>
 
 
 <!-- DataTales Example -->
@@ -32,16 +40,6 @@ if (isset($_POST['generar_busqueda'])) {
         <a href="agregar_emprendedor.php" class="btn btn-outline-info " style="width: fit-content;">Nuevo</a>
     </div>
     <div class="row">
-    <div class="col-md-4">
-    <?php 
-        if(isset($_SESSION['message'])) { ?>
-        <div class="alert alert-<?= $_SESSION['message_type']?> alert-dismissible fade show" role="alert">
-        <?= $_SESSION['message']?>
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-</div>
-
-    <?php session_unset(); } ?>
-    </div>
     </div>
     <div class="card-body">
         <div class="table-responsive">

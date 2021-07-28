@@ -30,16 +30,16 @@ if(isset($_POST['actualizar_usuario'])) {
     mail = '$mail', 
     password = '$pass', 
     user_img = '$user_img'
-    WHERE emp_id = $emp_id";
+    WHERE user_id = $user_id";
 
 
     mysqli_query($conexion, $query);
 
     $directorio = 'img_uploads/';
-  $directorio = $directorio.basename( $_FILES['user_img']['name']);
-  move_uploaded_file($_FILES['user_img']['tmp_name'],$directorio); 
+    $directorio = $directorio.basename( $_FILES['user_img']['name']);
+    move_uploaded_file($_FILES['user_img']['tmp_name'],$directorio); 
 
-    $_SESSION['message'] = 'Datos actualizados correctamente';
+    $_SESSION['message'] = '<span>Datos actualizados correctamente</span>';
     $_SESSION['message_type'] = 'warning';
 
     header("Location: ../ver_usuarios.php");

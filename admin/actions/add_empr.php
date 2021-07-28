@@ -1,7 +1,7 @@
 <?php
 
 include("connect_db.php");
-
+session_start();
     
     
     if (isset($_POST['guardar_emp'])) {

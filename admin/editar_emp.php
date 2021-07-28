@@ -1,8 +1,8 @@
 <?php
+session_start();
 require_once 'includes/sidebar.php';
 require_once 'includes/navbar.php';
 include("actions/edit_emp.php");
-session_start();
 ?>
 
 <!-- Begin Page Content -->
@@ -19,10 +19,13 @@ session_start();
         if(isset($_SESSION['message'])) { ?>
         <div class="alert alert-<?= $_SESSION['message_type']?> alert-dismissible fade show" role="alert">
         <?= $_SESSION['message']?>
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        <button type="button" class="btn-close close" data-dismiss="alert" aria-label="Close" >
+        &times;
+        </button>
+  
 </div>
 
-    <?php session_unset(); } ?>
+    <?php  } ?>
     </div>
     </div>
   
@@ -32,6 +35,7 @@ session_start();
     <div class="d-flex flex-wrap">
         <div class="col-12 col-md-5">
             <input type="text" name="name" id="name" value="<?php echo $emp_name; ?>" class="form-control my-2">
+            
             <select name="categoria" id="categoria" class="form-control mb-2" aria-label="Default select example" >
                 <option value="#">Selecciona una categoria...</option>
                 <?php
@@ -65,24 +69,17 @@ session_start();
         <div class="col-12 col-md-5">
             <input type="url" name="fb" id="fb" value="<?php echo $emp_fb; ?>" class="form-control my-2">
             <input type="url" name="ig" id="ig" value="<?php echo $emp_ig; ?>" class="form-control my-2">
-            <label for="img" class="mt-4">Seleccionar imagen</label>
-            <?php if($row['emp_img'] == "") {?>
+            <label for="img_act">Imagen actual</label>
+            <img src="actions/img_uploads/<?php echo $row['emp_img'] ?>"  alt="profile-image" class="img-thumbnail"/></br>
+            <label for="img" class="mt-4">Seleccionar nueva imagen</label>
                 <input type="hidden" name="MAX_FILE_SIZE" value="200000" />
                 <input type="file" name="img" id="img" class="form-control-file mb-1" accept="image/*">
-            <?php }else{?>
-            <input type="file" name="img" id="img" class="form-control-file mb-1" accept="image/*">
-            <img src="actions/img_uploads/<?php echo $row['emp_img'] ?>"  alt="profile-image" class="img-thumbnail"/></br>
-            <?php } ?>
-            <label for="publicar" class="my-4">Publicar</label>
-            <?php if( $row['emp_publicar']==1) {?>
-            <input type="checkbox"  value=1 id="publicar" name="publicar" checked>
-            <?php }else{ ?>
-                <input type="checkbox" id="publicar" value=0 name="publicar">
-            <?php } ?>
+                <label for="publicar" class="my-4">Publicar</label>
+        <input type="checkbox" id="publicar" value=1 name="publicar">
         </div>
     </div>
     <div>
-        <input type="submit" value="Actualizar" class="btn btn-outline-success my-2 mr-2" name="actualizar_emp" id="guardar_emp">
+        <input type="submit" value="Actualizar" class="btn btn-outline-success my-2 mr-2" name="actualizar_emp" id="actualizar_emp">
         <input type="reset" value="Borrar" class="btn btn-outline-danger my-2">
     </div>
         <a href="ver_emprendedores.php" class="btn btn-outline-warning " style="width: fit-content;">Volver</a>
