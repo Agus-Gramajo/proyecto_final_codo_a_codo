@@ -28,6 +28,28 @@ session_start();
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.css" rel="stylesheet">
+    <script src="../vendor/jquery/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    
+    <script>
+$(document).ready(function(){
+    $('#categoria').on('change', function(){
+        var catID = $(this).val();
+        if(catID){
+            $.ajax({
+                type:'POST',
+                url:'ajaxData.php',
+                data:'categoria_id='+catID,
+                success:function(html){
+                    $('#subcategoria').html(html);
+                }
+            }); 
+        }else{
+           
+        }
+    });
+});
+</script>
 
 </head>
 

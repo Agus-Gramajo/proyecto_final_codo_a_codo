@@ -3,6 +3,7 @@ require_once 'includes/sidebar.php';
 require_once 'includes/navbar.php';
 include("actions/connect_db.php");
 session_start();
+
 ?>
 
 <!-- Begin Page Content -->
@@ -28,32 +29,32 @@ session_start();
   
     <!-- </div> -->
 
-        <form action="actions/add_empr.php" method="POST"  class="d-flex flex-column col-10" enctype="multipart/form-data">
+<form action="actions/add_empr.php" method="POST"  class="d-flex flex-column col-10" enctype="multipart/form-data">
     <div class="d-flex flex-row">
         <div class="col-5">
             <input type="text" name="name" id="name" placeholder="Nombre..." class="form-control my-2 text-capitalize">
-            <select name="categoria" id="categoria" class="form-control mb-2 text-capitalize" aria-label="Default select example" onchange="enviar_valores(this.value);">
+            <select name="categoria" id="categoria" class="form-control mb-2 text-capitalize" aria-label="Default select example">
                 <option value="#" class="text-capitalize">Selecciona una categoria...</option>
                 <?php
-                
-                $query = mysqli_query($conexion, "SELECT * FROM categorias");
+                $query = mysqli_query($conexion, "SELECT * FROM categorias ORDER BY cat_name ASC");
                 ?>
                 <?php
                     while($datos = mysqli_fetch_array($query))
                 {?>
-            <option value=<?php echo $datos['categoria_id']?> class="text-capitalize"><?php echo $datos['cat_name']?></option>
-            <?php }?>
+                <option value=<?php echo $datos['categoria_id']?> class="text-capitalize"><?php echo $datos['cat_name']?></option>
+                <?php }?>
             <script>
-                function enviar_valores(){
-                var cat = document.getElementById('categoria').value;
-                console.log(cat);
-                }
+
+                // function enviar_valores(){
+                // var cat = document.getElementById('categoria').value;
+                // console.log(cat);
+                // }
             </script>
             <input type="hidden" value="selected_cat">
             <?php 
-            $valor=$_GET['selected_cat'];
-            echo $valor;
-            ?>
+            // $valor=$_GET['selected_cat'];
+            // echo $valor;
+            // ?>
         </select>
         <select name="subcategoria" id="subcategoria" class="form-control mb-2 text-capitalize" aria-label="Default select example">
             <option value="0">Seleccionar subcategoria...</option>
@@ -91,7 +92,7 @@ session_start();
             <input type="reset" value="Borrar" class="btn btn-outline-danger my-2">
         </div>
         <a href="ver_emprendedores.php" class="btn btn-outline-warning " style="width: fit-content;">Volver</a>
-    </form>
+</form>
       
   
 </div>
@@ -99,6 +100,7 @@ session_start();
 
 </div>
 <!-- End of Main Content -->
+
 
 <?php
 require_once 'includes/footer.php';
